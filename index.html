@@ -1,753 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Project Synopsis in 15 Minutes — A Guide for MBA Students at RTM Nagpur University</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MBA Research Synopsis Generator — RTM Nagpur University</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --saffron: #E8732A;
-    --saffron-light: #FDF0E8;
-    --saffron-mid: #F5C49A;
-    --navy: #0F1F3D;
-    --navy-mid: #1E3A5F;
-    --navy-light: #EBF0F8;
-    --ink: #1A1A1A;
-    --ink-mid: #3D3D3D;
-    --ink-light: #6B6B6B;
-    --cream: #FDFAF6;
-    --rule: #E2D9CE;
-    --green: #1E6B45;
-    --green-light: #E8F5EE;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Source Serif 4', Georgia, serif;
-    background: var(--cream);
-    color: var(--ink);
-    font-size: 18px;
-    line-height: 1.8;
-  }
-
-  /* ── MASTHEAD ── */
-  .masthead {
-    background: var(--navy);
-    padding: 12px 0;
-    text-align: center;
-    border-bottom: 3px solid var(--saffron);
-  }
-  .masthead span {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-  }
-  .masthead .tag {
-    display: inline-block;
-    background: var(--saffron);
-    color: white;
-    padding: 2px 10px;
-    border-radius: 2px;
-    margin-right: 10px;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 72px 32px 48px;
-    position: relative;
-  }
-
-  .hero-kicker {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--saffron);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .hero-kicker::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: var(--saffron);
-  }
-
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--navy);
-    letter-spacing: -0.02em;
-    margin-bottom: 28px;
-  }
-
-  h1 em {
-    font-style: italic;
-    color: var(--saffron);
-  }
-
-  .hero-deck {
-    font-family: 'Source Serif 4', serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: var(--ink-mid);
-    line-height: 1.65;
-    max-width: 680px;
-    border-left: 3px solid var(--saffron);
-    padding-left: 20px;
-    margin-bottom: 36px;
-  }
-
-  .byline {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    color: var(--ink-light);
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    padding-bottom: 36px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .byline strong { color: var(--ink-mid); font-weight: 500; }
-
-  /* ── LAYOUT ── */
-  .content-wrap {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 32px 80px;
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    gap: 60px;
-    align-items: start;
-  }
-
-  @media (max-width: 720px) {
-    .content-wrap { grid-template-columns: 1fr; }
-    .sidebar { order: -1; }
-  }
-
-  /* ── ARTICLE BODY ── */
-  article p {
-    margin-bottom: 1.4em;
-    color: var(--ink-mid);
-    font-size: 1rem;
-    font-weight: 300;
-  }
-
-  article p strong {
-    color: var(--ink);
-    font-weight: 600;
-  }
-
-  article p em { font-style: italic; color: var(--ink); }
-
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.65rem;
-    font-weight: 700;
-    color: var(--navy);
-    margin: 52px 0 16px;
-    line-height: 1.25;
-  }
-
-  h3 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--saffron);
-    margin: 36px 0 10px;
-  }
-
-  /* ── PULL QUOTE ── */
-  .pull-quote {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.45rem;
-    font-style: italic;
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1.4;
-    border-top: 2px solid var(--navy);
-    border-bottom: 2px solid var(--navy);
-    padding: 24px 0;
-    margin: 40px 0;
-  }
-
-  /* ── STEP CARDS ── */
-  .steps { margin: 32px 0; display: flex; flex-direction: column; gap: 0; }
-
-  .step {
-    display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 0;
-    position: relative;
-  }
-
-  .step:not(:last-child) .step-line {
-    position: absolute;
-    left: 27px;
-    top: 56px;
-    bottom: 0;
-    width: 2px;
-    background: var(--rule);
-  }
-
-  .step-num {
-    width: 56px;
-    padding-top: 4px;
-    flex-shrink: 0;
-  }
-
-  .step-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--navy);
-    color: white;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .step-body {
-    padding: 0 0 36px 16px;
-  }
-
-  .step-title {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
-
-  .step-desc {
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: var(--ink-mid);
-    line-height: 1.7;
-    margin: 0;
-  }
-
-  .step-tag {
-    display: inline-block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    background: var(--navy-light);
-    color: var(--navy-mid);
-    padding: 2px 8px;
-    border-radius: 2px;
-    margin-bottom: 6px;
-  }
-
-  /* ── WHAT YOU GET BOX ── */
-  .output-box {
-    background: var(--navy);
-    border-radius: 4px;
-    padding: 28px 32px;
-    margin: 36px 0;
-    color: white;
-  }
-
-  .output-box h3 {
-    color: var(--saffron-mid);
-    margin-top: 0;
-    margin-bottom: 16px;
-  }
-
-  .output-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .output-list li {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 300;
-    color: rgba(255,255,255,0.8);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.5;
-  }
-
-  .output-list li::before {
-    content: '→';
-    color: var(--saffron);
-    font-weight: 500;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  /* ── VIKSIT BHARAT CALLOUT ── */
-  .vb-callout {
-    border: 1.5px solid var(--green);
-    border-radius: 4px;
-    padding: 24px 28px;
-    margin: 36px 0;
-    background: var(--green-light);
-  }
-
-  .vb-callout .vb-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 10px;
-  }
-
-  .vb-callout p {
-    font-size: 0.95rem !important;
-    color: #1A3D2B !important;
-    margin-bottom: 0 !important;
-    font-weight: 400 !important;
-  }
-
-  /* ── HONEST CAVEAT BOX ── */
-  .caveat {
-    background: var(--saffron-light);
-    border-left: 4px solid var(--saffron);
-    padding: 20px 24px;
-    margin: 36px 0;
-    border-radius: 0 4px 4px 0;
-  }
-
-  .caveat p {
-    font-size: 0.93rem !important;
-    color: #5C2D00 !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* ── SIDEBAR ── */
-  .sidebar { padding-top: 52px; }
-
-  .sidebar-card {
-    background: white;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 22px;
-    margin-bottom: 24px;
-  }
-
-  .sidebar-card h4 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--saffron);
-    margin-bottom: 12px;
-  }
-
-  .sidebar-card p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem;
-    color: var(--ink-mid);
-    line-height: 1.6;
-    margin-bottom: 0;
-    font-weight: 300;
-  }
-
-  .sidebar-card ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-
-  .sidebar-card ul li {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem;
-    color: var(--ink-mid);
-    font-weight: 300;
-    padding-left: 14px;
-    position: relative;
-    line-height: 1.5;
-  }
-
-  .sidebar-card ul li::before {
-    content: '·';
-    position: absolute;
-    left: 0;
-    color: var(--saffron);
-    font-weight: 700;
-  }
-
-  .spec-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    margin-top: 4px;
-  }
-
-  .spec-pill {
-    background: var(--navy-light);
-    color: var(--navy-mid);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 5px 8px;
-    border-radius: 3px;
-    text-align: center;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    color: rgba(255,255,255,0.45);
-    text-align: center;
-    padding: 28px 24px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    border-top: 3px solid var(--saffron);
-  }
-
-  footer strong { color: rgba(255,255,255,0.7); }
-
-  /* ── INLINE SAMPLE ── */
-  .sample-title {
-    background: white;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 18px 22px;
-    margin: 16px 0 24px;
-  }
-  .sample-title .label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    margin-bottom: 6px;
-  }
-  .sample-title .original { color: var(--ink-light); font-style: italic; font-size: 0.92rem; margin-bottom: 10px; }
-  .sample-title .refined {
-    color: var(--navy);
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 4px;
-    padding-left: 14px;
-    border-left: 3px solid var(--saffron);
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero { animation: fadeUp 0.6s ease both; }
-  .hero-deck { animation: fadeUp 0.6s 0.1s ease both; }
-
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#f4f2ee;min-height:100vh;padding:24px 12px 48px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#ccc;border-radius:4px}
+.wrap{max-width:760px;margin:0 auto;background:white;border-radius:14px;overflow:hidden;box-shadow:0 4px 32px rgba(0,0,0,0.08)}
+.hdr{background:#1F3864;color:white;padding:22px 32px 18px}
+.hdr-t{font-family:'Crimson Pro',Georgia,serif;font-size:23px;font-weight:600;letter-spacing:.3px}
+.hdr-s{font-size:12px;opacity:.7;margin-top:4px}
+.prog{display:flex;padding:0 32px;margin:24px 0 28px}
+.step{flex:1;padding:7px 4px;text-align:center;font-size:12px;border-bottom:2.5px solid #ddd;color:#aaa;transition:all .2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.step.active{border-color:#E8760A;color:#E8760A;font-weight:500}
+.step.done{border-color:#1F3864;color:#1F3864}
+.sec{padding:0 32px 32px}
+.lbl{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.9px;display:block;margin-bottom:14px}
+.tag{display:inline-block;padding:3px 14px;border-radius:20px;font-size:12px;font-weight:500;background:#1F3864;color:white;margin-bottom:16px}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.spec-btn{padding:15px 16px;border:2px solid #e0e0e0;background:white;border-radius:8px;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif;font-size:14px;color:#333;transition:all .15s;width:100%}
+.spec-btn:hover{border-color:#bbb}
+.title-list{list-style:none;max-height:360px;overflow-y:auto;border:1px solid #e4e4e4;border-radius:8px;margin-bottom:18px}
+.title-subhd{padding:8px 16px;font-size:11px;font-weight:600;color:#888;background:#f6f6f6;text-transform:uppercase;letter-spacing:.9px;border-bottom:1px solid #eee;position:sticky;top:0}
+.title-item{padding:11px 16px;cursor:pointer;font-size:14px;line-height:1.5;border-bottom:1px solid #f2f2f2;background:white;border-left:3px solid transparent;color:#333;transition:all .1s}
+.title-item:last-child{border-bottom:none}
+.title-item:hover{background:#f9f9f9}
+.title-item.sel{background:#1F386408;border-left-color:#1F3864}
+.custom-wrap{margin-bottom:22px}
+.chk-lbl{font-size:13px;color:#555;display:flex;align-items:center;gap:8px;cursor:pointer;margin-bottom:10px}
+.custom-in{width:100%;padding:12px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;margin-top:4px;outline:none;transition:border .15s}
+.custom-in:focus{border-color:#1F3864}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.btn{padding:11px 26px;border:none;border-radius:6px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s}
+.btn-navy{background:#1F3864;color:white}
+.btn-navy:hover{background:#16305a}
+.btn-navy:disabled{background:#bbb;cursor:not-allowed}
+.btn-saf{background:#E8760A;color:white}
+.btn-saf:hover{background:#d06a09}
+.btn-grey{background:#ededed;color:#555}
+.btn-grey:hover{background:#e0e0e0}
+.opt-card{border:2px solid #e0e0e0;border-radius:10px;padding:18px 22px;cursor:pointer;background:white;margin-bottom:12px;transition:all .15s}
+.opt-card:hover{border-color:#ccc}
+.opt-card.sel{border-color:#E8760A;background:#E8760A08}
+.opt-lbl{font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.9px;margin-bottom:8px}
+.opt-lbl.sel{color:#E8760A}
+.opt-title{font-size:15px;font-weight:500;color:#222;margin-bottom:8px;line-height:1.45}
+.opt-rat{font-size:13px;color:#666;line-height:1.55;font-style:italic}
+.orig-link{font-size:13px;color:#1F3864;background:none;border:none;cursor:pointer;padding:4px 0;text-decoration:underline;font-family:'DM Sans',sans-serif;display:block;margin-top:8px;text-align:left}
+.syn-title{font-family:'Crimson Pro',Georgia,serif;font-size:20px;font-weight:600;color:#1F3864;margin-bottom:20px;line-height:1.4}
+.syn-box{background:#fafaf8;border:1px solid #e8e4dc;border-radius:10px;padding:28px 32px;font-size:16px;line-height:1.9;color:#2a2a2a;font-family:'Crimson Pro',Georgia,serif}
+.syn-box p{margin-bottom:20px}
+.syn-box p:last-child{margin-bottom:0}
+.err{background:#fff3f3;border:1px solid #ffcdd2;border-radius:6px;padding:10px 14px;font-size:13px;color:#c62828;margin-top:12px}
+.disc{font-size:12px;color:#aaa;margin-top:20px;line-height:1.7;border-top:1px solid #f0f0f0;padding-top:18px}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ftr{text-align:center;font-size:12px;color:#bbb;padding:16px 32px;border-top:1px solid #f0f0f0;line-height:1.7}
+@media(max-width:520px){
+  .spec-grid{grid-template-columns:1fr}
+  .hdr{padding:18px 20px 14px}
+  .sec{padding:0 20px 24px}
+  .prog{padding:0 20px}
+  .syn-box{padding:20px 18px}
+}
 </style>
 </head>
 <body>
+<div class="wrap" id="app"></div>
 
-<!-- MASTHEAD -->
-<div class="masthead">
-  <span><span class="tag">Student Resource</span> MBA Programme · RTM Nagpur University · Academic Year 2024–25</span>
-</div>
+<script>
+const WORKER_URL="https://mba-synopsis-proxy1.timane-rajesh.workers.dev/";
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-kicker">AI-Assisted Research Tools</div>
-  <h1>Your Project Synopsis,<br><em>Done Right</em> — in 15 Minutes</h1>
-  <p class="hero-deck">
-    A step-by-step guide for MBA students at RTM Nagpur University on using the AI Synopsis Generator — from picking a title to producing a complete, supervisor-ready research proposal aligned with Viksit Bharat 2047.
-  </p>
-  <div class="byline">
-    <span><strong>For:</strong> MBA Sem IV Students — All Specialisations</span>
-    <span><strong>Time to read:</strong> 6 minutes</span>
-    <span><strong>Time to use the tool:</strong> 10–15 minutes</span>
-  </div>
-</header>
+const SPEC_COLORS={"Marketing":"#C0392B","Finance":"#1A5F9E","HRM":"#2E7D32","Operations Management":"#6A1B9A","Entrepreneurship":"#B7770D"};
 
-<!-- MAIN CONTENT -->
-<div class="content-wrap">
+const TITLES={
+"Marketing":{
+core:["A Study of Consumer Buying Behaviour Towards Organised Retail at Sitabuldi and Laxmi Nagar, Nagpur","Impact of Social Media Advertising on Purchase Intention Among Young Urban Consumers in Nagpur","Customer Satisfaction with Healthcare Services at Private Multispeciality Hospitals in Nagpur","Brand Perception of Vidarbha Handloom Products Among Urban Consumers in Nagpur","Effectiveness of Digital Marketing Practices Among SMEs Operating in Nagpur's IT and ITeS SEZ","A Study of Green Marketing Awareness and Its Influence on Buying Behaviour Among Nagpur Consumers","Customer Loyalty Towards FMCG Brands Among Households in Peri-Urban Vidarbha","Influence of Online Reviews on Hotel Selection Decisions Among Business Travellers at MIHAN Nagpur","Rural Marketing Challenges and Consumer Behaviour Towards Agri-Input Products in Vidarbha","Service Quality Perception and Customer Retention in Nagpur's Private Banking Sector","Impact of Influencer Marketing on Purchase Decisions Among Women Consumers in Nagpur","A Study of E-Commerce Adoption and Its Effect on Traditional Retailers at Sitabuldi, Nagpur","Consumer Awareness and Attitude Towards Organic and Naturally Processed Food Products in Vidarbha","Brand Loyalty and Switching Behaviour Among Mobile Network Users in Nagpur","Effectiveness of Below-the-Line Promotional Activities for Agri-Processing Firms in Vidarbha","Customer Experience and Repeat Purchase Behaviour at Quick Service Restaurants in Nagpur","Perception of CSR Initiatives and Brand Equity Among Consumers in WCL Township Areas, Nagpur","Impact of Packaging Design on Purchase Decisions for Regional Food Brands in Nagpur","A Study of Word-of-Mouth Marketing and Its Role in Patient Acquisition at AIIMS Nagpur","Adoption of Digital Payment Systems and Its Effect on Consumer Spending Behaviour in Nagpur's Retail Sector"],
+multi:["PESTEL Analysis of the Organised Retail Sector in Nagpur and Its Implications for Marketing Strategy","Applying Ansoff's Growth Matrix to Brand Expansion Strategies of Vidarbha-Based Agri-Processing Firms","Blue Ocean Strategy Opportunities for Reviving Handloom Products as a Premium Consumer Brand in Nagpur","A Study of Customer Experience as a Competitive Differentiator — Applying Porter's Five Forces to Nagpur's Private Healthcare Market","Digital-First Marketing Transformation Among SMEs in Nagpur — Insights from Global McKinsey and Bain Frameworks"]
+},
+"Finance":{
+core:["A Study of Investment Behaviour and Risk Appetite Among Salaried Employees in Nagpur","Non-Performing Assets and Credit Risk Management in Regional Rural Banks Serving Vidarbha","Financial Inclusion Through Jan Dhan Yojana — A Study of Account Holders in Peri-Urban Nagpur","Working Capital Management Practices Among MSMEs in Nagpur's IT and ITeS SEZ","Awareness and Adoption of Mutual Funds Among Middle-Income Households in Nagpur","A Study of Agricultural Credit Access and Its Impact on Farm Productivity in Vidarbha","Capital Structure Decisions and Financial Performance of Listed Firms in the Vidarbha Region","Role of Microfinance Institutions in Women's Economic Empowerment in Rural Vidarbha","Crop Insurance Awareness and Uptake Under PMFBY Among Farmers in Vidarbha","Financial Stress and Debt Management Behaviour Among Cotton Farmers in Wardha and Yavatmal Districts","A Study of GST Compliance Burden on Small Traders at Sitabuldi and Itwari Markets, Nagpur","Profitability and Financial Health Analysis of Coal Sector PSUs — A Case of WCL Nagpur","Investor Awareness of Sovereign Gold Bonds and Digital Gold Among Urban Consumers in Nagpur","Impact of Interest Rate Fluctuations on Home Loan Demand in Nagpur's Real Estate Sector","A Study of Venture Capital and Angel Funding Awareness Among Startup Founders in Nagpur","Budgeting Practices and Financial Planning Behaviour Among Faculty and Staff of Higher Education Institutions in Nagpur","Role of NABARD-Linked Schemes in Financing Agri-Processing Units in Vidarbha","Tax Planning Awareness and Behaviour Among Self-Employed Professionals in Nagpur","A Study of UPI and Digital Lending Adoption Among Small Retailers in Nagpur","Financial Viability Assessment of Solar Energy Projects Under PM-KUSUM in Vidarbha"],
+multi:["ESG Reporting Practices and Investor Perception Among Listed Firms in the Vidarbha Region","Applying the Balanced Scorecard Framework to Financial Performance Measurement in Nagpur's Cooperative Banks","Fintech Disruption and Its Impact on Retail Banking Strategy — A Study of Banks Operating in Nagpur","Climate Risk and Green Financing Opportunities for Agri-Sector MSMEs in Vidarbha — A PwC Framework Perspective","A Study of Value-Based Financial Management Practices Among Family-Owned Businesses in Nagpur"]
+},
+"HRM":{
+core:["A Study of Employee Engagement and Retention Practices in IT and ITeS Firms at Nagpur SEZ","Impact of Training and Development Programmes on Employee Performance at WCL Nagpur","Work-Life Balance and Job Satisfaction Among Nursing Staff at Private Hospitals in Nagpur","A Study of Talent Acquisition Challenges Faced by MSMEs in Nagpur's Manufacturing Sector","Influence of Organisational Culture on Employee Motivation at MIHAN-Based Firms, Nagpur","Occupational Health and Safety Practices and Worker Productivity in Coal Mining Operations, Vidarbha","A Study of Performance Appraisal Systems and Their Perceived Fairness Among Employees in Nagpur's Banking Sector","Employee Attrition and Its Causes in BPO and ITeS Companies at Nagpur SEZ","Role of HR Practices in Managing Workforce Diversity at AIIMS Nagpur","Impact of Flexible Work Arrangements on Productivity Among Women Employees in Nagpur","A Study of Grievance Redressal Mechanisms and Employee Satisfaction in PSUs of Vidarbha","Skill Gap Analysis and Training Needs Among Workers in Vidarbha's Handloom and Textile Sector","Leadership Style and Its Effect on Team Performance in Nagpur-Based Logistics Firms","A Study of Compensation Structure and Its Influence on Employee Retention in Nagpur's Retail Sector","Mentoring Practices and Career Development Among Junior Faculty in Nagpur's Private Engineering Colleges","Impact of Digital HR Tools on Recruitment Efficiency in Mid-Sized Firms in Nagpur","A Study of Employee Stress and Burnout Among Ground Staff at Dr Babasaheb Ambedkar International Airport, Nagpur","Contract Labour Management and Industrial Relations in Agri-Processing Units in Vidarbha","A Study of CSR-Linked Employee Volunteering and Its Effect on Organisational Commitment in Nagpur Corporates","Gender Diversity Initiatives and Their Impact on Workplace Inclusion in Nagpur's Healthcare Sector"],
+multi:["Applying McKinsey's 7S Framework to Diagnose Organisational Effectiveness in Nagpur-Based Manufacturing Firms","Organisational Health and People Practices — A Study Benchmarked Against McKinsey Organisational Health Index in IT Firms at Nagpur SEZ","Future of Work Trends and HR Strategy Realignment Among Mid-Sized Enterprises in Nagpur — A Deloitte Framework Analysis","A Study of Psychological Safety and Innovation Culture in Nagpur's Knowledge-Intensive Firms","Employer Branding as a Talent Retention Strategy — Benchmarking Practices of Top Employers Against Nagpur-Based Firms"]
+},
+"Operations Management":{
+core:["Supply Chain Efficiency and Cold Storage Infrastructure for Orange and Soybean Produce in Vidarbha","A Study of Inventory Management Practices in Retail Outlets at Sitabuldi and Laxmi Nagar, Nagpur","Lean Manufacturing Practices and Waste Reduction in Agri-Processing Units in Vidarbha","A Study of Logistics Network Optimisation Among Road Freight Operators at Nagpur's Zero-Mile Hub","Operational Efficiency and Turnaround Time Management at Dr Babasaheb Ambedkar International Airport, Nagpur","Quality Management Practices and Their Impact on Patient Safety at Private Hospitals in Nagpur","A Study of Vendor Management and Procurement Practices in Construction Projects at MIHAN Nagpur","Capacity Utilisation and Operational Bottlenecks in Coal Handling Operations at WCL Nagpur","Adoption of Warehouse Management Systems Among Third-Party Logistics Providers in Nagpur","A Study of Production Planning and Scheduling Practices in Vidarbha's Handloom Clusters","Maintenance Management and Equipment Downtime Reduction at NTPC Koradi Power Station","Service Delivery Efficiency and Queue Management at AIIMS Nagpur's Outpatient Department","A Study of Reverse Logistics Practices Among E-Commerce Delivery Firms Operating in Nagpur","Total Quality Management Implementation and Its Outcomes in SMEs at Nagpur's Butibori Industrial Area","A Study of Last-Mile Delivery Challenges and Customer Satisfaction Among Online Grocery Platforms in Nagpur","Green Supply Chain Practices and Environmental Compliance Among Manufacturing Firms in Vidarbha","Impact of ERP System Adoption on Operational Performance in Mid-Sized Firms in Nagpur","A Study of Project Management Practices and Schedule Adherence in Infrastructure Projects at MIHAN","Demand Forecasting Accuracy and Its Effect on Stockout Rates Among FMCG Distributors in Nagpur","A Study of Outsourcing Decisions and Their Effect on Cost Efficiency in IT Firms at Nagpur SEZ"],
+multi:["Industry 4.0 Readiness and Digital Transformation of Shop-Floor Operations in Butibori Industrial Area, Nagpur","Supply Chain Resilience Frameworks Post-COVID — A Bain and McKinsey Lens Applied to Vidarbha's Agri-Supply Chains","Applying the SCOR Model to Evaluate Logistics Performance Among Third-Party Providers at Nagpur's Zero-Mile Hub","Sustainability and Circular Economy Practices in Operations — A Study of Manufacturing Firms in Vidarbha","A Study of Operational Excellence Using the DMAIC Framework in Agri-Processing Units in Nagpur"]
+},
+"Entrepreneurship":{
+core:["A Study of Startup Ecosystem Support and Challenges Faced by First-Generation Entrepreneurs at Nagpur SEZ","Motivational Factors and Barriers to Women Entrepreneurship in Urban and Peri-Urban Nagpur","Role of MUDRA Yojana in Financing Micro-Enterprises Among Youth Entrepreneurs in Vidarbha","A Study of Agri-Entrepreneurship Intentions Among Agriculture Graduates in Vidarbha","Challenges and Growth Strategies of Handloom and Textile Artisan Enterprises in Nagpur's Weaver Clusters","Impact of Incubation Support on Early-Stage Startup Survival in Nagpur","A Study of Digital Adoption and Business Performance Among Women-Led Home-Based Enterprises in Nagpur","Entrepreneurial Orientation and Business Growth Among MSMEs in Butibori Industrial Area, Nagpur","A Study of Social Entrepreneurship Initiatives Addressing Farmer Distress in Vidarbha","Access to Formal Credit and Its Impact on Growth of First-Generation Entrepreneurs in Nagpur","A Study of Family Business Succession Planning and Professionalisation Among Trading Firms at Itwari, Nagpur","Role of Self-Help Groups in Nurturing Rural Women Entrepreneurship in Vidarbha","Challenges of Scaling Agri-Processing Startups in the Post-Harvest Value Chain in Vidarbha","A Study of Entrepreneurial Failure, Learning, and Re-Entry Among SME Owners in Nagpur","Impact of Government Schemes Under Startup India on Entrepreneurship Activity in Nagpur District","A Study of Innovation Practices and Competitive Advantage Among Tech Startups at Nagpur SEZ","Gig Economy Participation and Entrepreneurial Behaviour Among Youth in Nagpur","A Study of Market Linkage Challenges Faced by Organic Farming Entrepreneurs in Vidarbha","Role of Mentorship and Peer Networks in Entrepreneurial Success Among MBA Graduates in Nagpur","A Study of E-Commerce as an Enabler of Micro-Enterprise Growth Among Artisans and Weavers in Vidarbha"],
+multi:["Business Model Canvas Application and Pivot Strategies Among Early-Stage Startups in Nagpur's Incubation Ecosystem","Disruptive Innovation Potential in Vidarbha's Agri-Tech Sector — A Christensen Framework Analysis","Applying Blue Ocean Strategy to Social Enterprises Addressing Farmer Welfare in Vidarbha","Entrepreneurial Ecosystem Mapping for Nagpur — Benchmarking Against Isenberg's Ecosystem Framework","A Study of Platform Business Models and Their Viability for Artisan and Weaver Cooperatives in Nagpur"]
+}
+};
 
-  <article>
+let state={stage:1,spec:"",selTitle:"",customTitle:"",useCustom:false,optA:{title:"",rat:""},optB:{title:"",rat:""},finalTitle:"",synopsis:"",loading:false,error:"",copied:false};
 
-    <p>
-      Every MBA student at some point faces the same wall. Semester IV begins, the project guide asks for a synopsis, and suddenly a two-page document feels like the hardest thing you have ever been asked to write. Not because the ideas are missing — you have plenty — but because the <em>structure</em> feels opaque. What exactly goes into a problem statement? How many hypotheses are too many? What does "research design" mean when you have not actually collected any data yet?
-    </p>
+function h(tag,attrs,...children){
+  const el=document.createElement(tag);
+  for(const[k,v] of Object.entries(attrs||{})){
+    if(k==="class")el.className=v;
+    else if(k.startsWith("on"))el.addEventListener(k.slice(2).toLowerCase(),v);
+    else if(k==="style"&&typeof v==="object")Object.assign(el.style,v);
+    else el.setAttribute(k,v);
+  }
+  for(const c of children){
+    if(c==null||c===false)continue;
+    el.appendChild(typeof c==="string"?document.createTextNode(c):c);
+  }
+  return el;
+}
 
-    <p>
-      This tool was built specifically for RTM Nagpur University MBA students to answer those questions — not with a textbook explanation, but by <strong>walking you through the process live</strong>, asking you the right questions, and generating a properly structured synopsis that your supervisor can actually work with.
-    </p>
+async function callClaude(system,userMsg,maxTok=1000){
+  const r=await fetch(WORKER_URL,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      model:"claude-sonnet-4-20250514",
+      max_tokens:maxTok,
+      system,
+      messages:[{role:"user",content:userMsg}]
+    })
+  });
+  const d=await r.json();
+  if(d.error)throw new Error(d.error.message);
+  return d.content.find(b=>b.type==="text")?.text||"";
+}
 
-    <p>
-      Here is exactly how it works.
-    </p>
+function parseRef(text){
+  const lines=text.split("\n").map(l=>l.trim()).filter(l=>l);
+  let a={title:"",rat:""},b={title:"",rat:""};
+  for(const l of lines){
+    if(l.startsWith("OPTION A:"))a.title=l.replace("OPTION A:","").trim();
+    else if(l.startsWith("RATIONALE A:"))a.rat=l.replace("RATIONALE A:","").trim();
+    else if(l.startsWith("OPTION B:"))b.title=l.replace("OPTION B:","").trim();
+    else if(l.startsWith("RATIONALE B:"))b.rat=l.replace("RATIONALE B:","").trim();
+  }
+  return{a,b};
+}
 
-    <div class="pull-quote">
-      "A good synopsis is not a summary of what you will find. It is a precise statement of what you intend to investigate and exactly how."
-    </div>
+function render(){
+  const app=document.getElementById("app");
+  app.innerHTML="";
+  const{stage,spec,selTitle,customTitle,useCustom,optA,optB,finalTitle,synopsis,loading,error,copied}=state;
+  const titleToUse=useCustom?customTitle:selTitle;
+  const steps=["Specialisation","Select Title","Refine","Synopsis"];
 
-    <h2>Before You Begin — One Thing to Understand</h2>
+  const hdrEl=h("div",{class:"hdr"},
+    h("div",{class:"hdr-t"},"MBA Research Synopsis Generator"),
+    h("div",{class:"hdr-s"},"MBA Semester IV · RTM Nagpur University · AI-Assisted Academic Tools")
+  );
 
-    <p>
-      The tool is not a shortcut around thinking. It is a <strong>scaffold for your thinking</strong>. The moment you engage with it, you will be asked real questions — about your target population, about what you already know from reading, about which variables interest you most. Your answers shape every word of the synopsis. Two students with different answers get two completely different documents. The tool cannot do your thinking for you, and it does not try to.
-    </p>
+  const progEl=h("div",{class:"prog"});
+  steps.forEach((s,i)=>{
+    const cl="step"+(stage===i+1?" active":stage>i+1?" done":"");
+    progEl.appendChild(h("div",{class:cl},(stage>i+1?"✓ ":"")+s));
+  });
 
-    <p>
-      What it eliminates is the formatting paralysis — the blank-page anxiety that comes from not knowing how to begin, and the hours lost wondering whether the hypothesis should come before or after the objectives.
-    </p>
+  app.appendChild(hdrEl);
+  app.appendChild(progEl);
 
-    <h2>The Five Stages</h2>
+  const sec=h("div",{class:"sec"});
+  app.appendChild(sec);
 
-    <div class="steps">
+  if(stage===1){
+    sec.appendChild(h("span",{class:"lbl"},"Step 1 — Choose your specialisation"));
+    const grid=h("div",{class:"spec-grid"});
+    Object.keys(TITLES).forEach(sp=>{
+      const col=SPEC_COLORS[sp];
+      const btn=h("button",{class:"spec-btn"+(state.spec===sp?" sel":""),onclick:()=>{state.spec=sp;render();}},sp);
+      if(state.spec===sp){btn.style.borderColor=col;btn.style.background=col+"18";btn.style.color=col;btn.style.fontWeight="500";}
+      grid.appendChild(btn);
+    });
+    sec.appendChild(grid);
+    const nb=h("button",{class:"btn btn-navy",onclick:()=>{if(state.spec){state.stage=2;render();}}},  "Continue →");
+    if(!state.spec)nb.disabled=true;
+    sec.appendChild(nb);
+  }
 
-      <!-- STEP 1 -->
-      <div class="step">
-        <div class="step-line"></div>
-        <div class="step-num"><div class="step-circle">1</div></div>
-        <div class="step-body">
-          <div class="step-tag">Choose your domain</div>
-          <div class="step-title">Select your specialisation</div>
-          <p class="step-desc">
-            The first screen asks you to pick your MBA specialisation — Marketing, Finance, HRM, or Operations Management. This matters because the tool surfaces a curated list of <strong>pre-approved project titles</strong> relevant to your domain, all anchored in Nagpur's economic and social context. Titles are drawn from real sectors — MIHAN, WCL, Vidarbha's orange belt, Nagpur's retail corridor, AIIMS Nagpur, the city's IT/ITeS SEZ, and more. These are not generic textbook topics.
-          </p>
-        </div>
-      </div>
+  if(stage===2){
+    sec.appendChild(h("div",{class:"tag"},spec));
+    sec.appendChild(h("span",{class:"lbl"},"Step 2 — Select a title or enter your own"));
+    const ul=h("ul",{class:"title-list"});
+    ul.appendChild(h("li",{class:"title-subhd"},"Core titles — 1 to 20"));
+    TITLES[spec].core.forEach((t,i)=>{
+      const li=h("li",{class:"title-item"+((!useCustom&&selTitle===t)?" sel":""),onclick:()=>{state.selTitle=t;state.useCustom=false;render();}},`${i+1}. ${t}`);
+      ul.appendChild(li);
+    });
+    ul.appendChild(h("li",{class:"title-subhd"},"Multidisciplinary titles — 21 to 25"));
+    TITLES[spec].multi.forEach((t,i)=>{
+      const li=h("li",{class:"title-item"+((!useCustom&&selTitle===t)?" sel":""),onclick:()=>{state.selTitle=t;state.useCustom=false;render();}},`${i+21}. ${t}`);
+      ul.appendChild(li);
+    });
+    sec.appendChild(ul);
 
-      <!-- STEP 2 -->
-      <div class="step">
-        <div class="step-line"></div>
-        <div class="step-num"><div class="step-circle">2</div></div>
-        <div class="step-body">
-          <div class="step-tag">Title selection</div>
-          <div class="step-title">Pick a title — or bring your own</div>
-          <p class="step-desc">
-            Browse the curated list for your specialisation. Every title is distinct — no two titles share both the same variable and the same target population. If your supervisor has already suggested a topic, use the <em>"Enter my own title"</em> option. The tool will check it for specificity — does it name a sector, a dependent variable, a geography? — and ask one clarifying question if needed before proceeding.
-          </p>
-        </div>
-      </div>
+    const cw=h("div",{class:"custom-wrap"});
+    const chkLbl=h("label",{class:"chk-lbl"});
+    const chk=h("input",{type:"checkbox",onchange:(e)=>{state.useCustom=e.target.checked;if(!e.target.checked)state.customTitle="";render();}});
+    if(useCustom)chk.checked=true;
+    chkLbl.appendChild(chk);
+    chkLbl.appendChild(document.createTextNode(" I want to enter my own title instead"));
+    cw.appendChild(chkLbl);
+    if(useCustom){
+      const inp=h("input",{class:"custom-in",type:"text",placeholder:"Type your research title here...",oninput:(e)=>{state.customTitle=e.target.value;}});
+      inp.value=customTitle;
+      setTimeout(()=>inp.focus(),50);
+      cw.appendChild(inp);
+    }
+    sec.appendChild(cw);
 
-      <!-- STEP 3 -->
-      <div class="step">
-        <div class="step-line"></div>
-        <div class="step-num"><div class="step-circle">3</div></div>
-        <div class="step-body">
-          <div class="step-tag">Title refinement</div>
-          <div class="step-title">See two improved versions — then decide</div>
-          <p class="step-desc">
-            This is the part most students find most useful. The tool presents two refined alternatives to whichever title you selected, explains briefly what changed and why, and lets you choose between the three options. Here is an example of how that looks:
-          </p>
+    const canProceed=useCustom?customTitle.trim().length>5:selTitle.length>0;
+    const btnRow=h("div",{class:"btn-row"});
+    btnRow.appendChild(h("button",{class:"btn btn-grey",onclick:()=>{state.stage=1;render();}},"← Back"));
+    const refBtn=h("button",{class:"btn btn-navy",onclick:async()=>{
+      if(!canProceed||loading)return;
+      state.loading=true;state.error="";render();
+      try{
+        const sys=`You are an academic research title specialist for MBA students at RTM Nagpur University. Given a research title and specialisation, provide exactly two refined alternatives. Respond in EXACTLY this format with no additional text:
 
-          <div class="sample-title">
-            <div class="label">Your original title</div>
-            <div class="original">"A study of social media marketing in Nagpur"</div>
-            <div class="label" style="margin-top:12px">Option A — Sharper focus</div>
-            <div class="refined">"Influence of Instagram Marketing on Brand Recall among Young Consumers in Nagpur's FMCG Sector"</div>
-            <div class="label" style="margin-top:10px">Option B — Policy-linked scope</div>
-            <div class="refined">"Social Media Marketing Adoption by MSMEs in Nagpur: A Study in the Context of Digital India and Viksit Bharat 2047"</div>
-          </div>
+OPTION A: [refined title — sharper, more focused, clearly names the key variable and target population]
+RATIONALE A: [one sentence explaining why this version is more precise and researchable]
 
-          <p class="step-desc">
-            Option A narrows and sharpens — better for a clean, testable study. Option B widens scope but adds contemporary relevance — stronger for students aiming at publication or competitions. You can proceed with either alternative, or keep your original title exactly as it is.
-          </p>
-        </div>
-      </div>
+OPTION B: [refined title — broader scope, policy or societal angle, may reference a scheme or framework]
+RATIONALE B: [one sentence explaining the wider relevance this version brings]`;
+        const res=await callClaude(sys,`Specialisation: ${spec}\nOriginal title: ${titleToUse}\n\nProvide two refined alternatives.`,800);
+        const p=parseRef(res);
+        if(!p.a.title||!p.b.title)throw new Error("Could not parse response. Please try again.");
+        state.optA=p.a;state.optB=p.b;state.stage=3;
+      }catch(e){state.error=e.message||"Something went wrong. Please try again.";}
+      state.loading=false;render();
+    }});
+    if(loading){refBtn.innerHTML='<span class="spin"></span>Refining title...';}
+    else{refBtn.textContent="Refine This Title →";}
+    if(!canProceed||loading)refBtn.disabled=true;
+    btnRow.appendChild(refBtn);
+    sec.appendChild(btnRow);
+    if(error)sec.appendChild(h("div",{class:"err"},error));
+  }
 
-      <!-- STEP 4 -->
-      <div class="step">
-        <div class="step-line"></div>
-        <div class="step-num"><div class="step-circle">4</div></div>
-        <div class="step-body">
-          <div class="step-tag">Synopsis generation</div>
-          <div class="step-title">The full document is built around your confirmed title</div>
-          <p class="step-desc">
-            Once your title is confirmed, the tool generates your complete synopsis as running text — ready to read, copy, and share with your guide. No downloading required, no formatting to fix. The document follows the RTM Nagpur University project format precisely, covering every section your guide expects to see.
-          </p>
-        </div>
-      </div>
+  if(stage===3){
+    sec.appendChild(h("div",{class:"tag"},spec));
+    sec.appendChild(h("span",{class:"lbl"},"Step 3 — Choose your refined title"));
+    sec.appendChild(h("p",{style:{fontSize:"13px",color:"#888",marginBottom:"20px",lineHeight:"1.6",fontStyle:"italic"}},"Original: "+titleToUse));
 
-      <!-- STEP 5 -->
-      <div class="step">
-        <div class="step-num"><div class="step-circle">5</div></div>
-        <div class="step-body">
-          <div class="step-tag">Policy alignment</div>
-          <div class="step-title">The Viksit Bharat 2047 paragraph — added automatically</div>
-          <p class="step-desc">
-            Every synopsis closes with a dedicated paragraph connecting your study to the Government of India's Viksit Bharat 2047 vision. This is not a generic paragraph that could belong to any study — it identifies which specific pillar of the vision your research speaks to (Youth & Education, Economy & Infrastructure, Governance & Technology, or Social Development), names one or two supporting schemes where relevant, and ends with a sentence on what your findings could mean specifically for a Tier-2 city like Nagpur.
-          </p>
-        </div>
-      </div>
+    [{lbl:"Option A — Focused & Precise",opt:optA},{lbl:"Option B — Broader & Policy-Oriented",opt:optB}].forEach(({lbl,opt})=>{
+      const isSel=finalTitle===opt.title&&finalTitle!=="";
+      const card=h("div",{class:"opt-card"+(isSel?" sel":""),onclick:()=>{state.finalTitle=opt.title;render();}},
+        h("div",{class:"opt-lbl"+(isSel?" sel":"")},lbl),
+        h("div",{class:"opt-title"},opt.title),
+        h("div",{class:"opt-rat"},opt.rat)
+      );
+      sec.appendChild(card);
+    });
 
-    </div>
+    const shortOrig=titleToUse.length>75?titleToUse.slice(0,75)+"...":titleToUse;
+    sec.appendChild(h("button",{class:"orig-link",onclick:()=>{state.finalTitle=titleToUse;render();}},`Use original title instead: "${shortOrig}"`));
 
-    <h2>What Your Completed Synopsis Contains</h2>
+    const canGen=finalTitle.length>0;
+    const btnRow=h("div",{class:"btn-row",style:{marginTop:"20px"}});
+    btnRow.appendChild(h("button",{class:"btn btn-grey",onclick:()=>{state.stage=2;render();}},"← Back"));
+    const genBtn=h("button",{class:"btn btn-navy",onclick:async()=>{
+      if(!canGen||loading)return;
+      state.loading=true;state.error="";render();
+      try{
+        const sys=`You are an expert academic research supervisor at RTM Nagpur University helping MBA Semester IV students write research project synopses. Write a complete, formal synopsis in continuous prose — no bullet points, no section headings, no numbered lists, no bold text. Use formal academic English throughout.
 
-    <div class="output-box">
-      <h3>Every section, in order</h3>
-      <ul class="output-list">
-        <li>Title — confirmed and refined, with your name and programme details</li>
-        <li>Introduction and background — contextualised for Nagpur and the relevant sector</li>
-        <li>Statement of the problem — the specific gap your study addresses</li>
-        <li>Significance of the study — academic, managerial, and policy dimensions</li>
-        <li>Research objectives — 4 to 5 specific, measurable objectives</li>
-        <li>Research hypotheses — null and alternate pairs, ready for statistical testing</li>
-        <li>Review of literature — key themes, foundational frameworks, and identified research gap</li>
-        <li>Research design — descriptive or exploratory, justified for your topic</li>
-        <li>Sampling plan — population, technique, and sample size with rationale</li>
-        <li>Data collection tools — questionnaire design rationale and secondary sources</li>
-        <li>Statistical tools — regression, chi-square, factor analysis, or ANOVA as relevant</li>
-        <li>Expected outcomes and limitations</li>
-        <li>Preliminary bibliography — 8 to 10 seed references to start your literature review</li>
-        <li>Viksit Bharat 2047 alignment — the policy connection paragraph</li>
-      </ul>
-    </div>
+The synopsis must naturally flow through: an introduction and background to the topic, a clear statement of the problem, 3 to 4 specific objectives stated as complete sentences within the prose, the scope of the study, research methodology including research design, data collection approach and sampling, significance of the study, and limitations of the study.
 
-    <h2>The Viksit Bharat 2047 Connection</h2>
+End with a mandatory final paragraph connecting the study to Viksit Bharat 2047. This paragraph must name one specific pillar of Viksit Bharat 2047, mention one or two supporting Government of India schemes by their full name, and end with a sentence specifically about how Nagpur or the Vidarbha region contributes to or benefits from this national vision.
 
-    <p>
-      India's overarching development vision — a fully developed nation by the centenary of Independence in 2047 — rests on four pillars: a thriving economy and modern infrastructure, an equitable and inclusive society, robust governance and technology adoption, and a prosperous, skilled youth. Almost every serious management research topic maps onto one or more of these pillars.
-    </p>
+Write approximately 700 words total. Separate paragraphs with a blank line. Do not use any headings, bullets, numbers, bold text, or formatting marks of any kind.`;
+        const res=await callClaude(sys,`Specialisation: ${state.spec}\nResearch Title: ${state.finalTitle}\n\nWrite the complete synopsis now.`,1800);
+        state.synopsis=res;state.stage=4;
+      }catch(e){state.error=e.message||"Something went wrong. Please try again.";}
+      state.loading=false;render();
+    }});
+    if(loading){genBtn.innerHTML='<span class="spin"></span>Generating synopsis...';}
+    else{genBtn.textContent="Generate Synopsis →";}
+    if(!canGen||loading)genBtn.disabled=true;
+    btnRow.appendChild(genBtn);
+    sec.appendChild(btnRow);
+    if(error)sec.appendChild(h("div",{class:"err"},error));
+  }
 
-    <div class="vb-callout">
-      <div class="vb-label">Why this paragraph matters</div>
-      <p>
-        Examiners and research panels increasingly look for studies that connect local findings to larger national priorities. A synopsis that articulates this connection — specifically, not vaguely — signals that the student understands both the academic and the real-world significance of their work. It also makes your project more competitive if you plan to present it at conferences or submit it for publication.
-      </p>
-    </div>
+  if(stage===4){
+    sec.appendChild(h("div",{class:"tag"},spec));
+    sec.appendChild(h("span",{class:"lbl"},"Step 4 — Your research synopsis"));
+    sec.appendChild(h("div",{class:"syn-title"},finalTitle));
+    const box=h("div",{class:"syn-box"});
+    synopsis.split(/\n\n+/).forEach(para=>{
+      if(para.trim())box.appendChild(h("p",{},para.trim()));
+    });
+    sec.appendChild(box);
+    const btnRow=h("div",{class:"btn-row",style:{marginTop:"22px"}});
+    const cpBtn=h("button",{class:"btn btn-saf",onclick:()=>{
+      navigator.clipboard.writeText(`RESEARCH TITLE\n${finalTitle}\n\nSPECIALISATION: ${spec}\n\n${synopsis}`).then(()=>{
+        state.copied=true;render();setTimeout(()=>{state.copied=false;render();},2500);
+      });
+    }},copied?"✓ Copied!":"Copy Synopsis to Clipboard");
+    btnRow.appendChild(cpBtn);
+    btnRow.appendChild(h("button",{class:"btn btn-grey",onclick:()=>{
+      state={stage:1,spec:"",selTitle:"",customTitle:"",useCustom:false,optA:{title:"",rat:""},optB:{title:"",rat:""},finalTitle:"",synopsis:"",loading:false,error:"",copied:false};
+      render();
+    }},"↺ Start New Synopsis"));
+    sec.appendChild(btnRow);
+    sec.appendChild(h("p",{class:"disc"},"This synopsis is AI-generated and provided as a structured academic starting point. Review all content carefully with your faculty guide before submission. Verify all factual claims, adapt the methodology to your actual study design, and ensure the final submission reflects your own independent academic work. All intellectual responsibility for the submitted project rests with the student."));
+  }
 
-    <p>
-      A finance student studying microfinance access for women in Nagpur's peri-urban areas connects to the Social Development pillar. An HRM student studying attrition in Nagpur's IT/ITeS sector connects to the Youth & Skilled Workforce pillar. A marketing student studying EV adoption connects to both Economy and Governance pillars. The tool identifies this connection from your title — you do not need to work it out yourself.
-    </p>
+  app.appendChild(h("div",{class:"ftr"},
+    "Prepared for MBA Students — RTM Nagpur University",h("br",{}),"AI-Assisted Academic Tools Initiative · 2024–25",h("br",{}),
+    h("span",{style:{fontSize:"11px",color:"#ddd"}},"This tool augments academic learning. All final submissions remain the intellectual work and responsibility of the student.")
+  ));
+}
 
-    <h3>An honest word about what the tool does not do</h3>
-
-    <div class="caveat">
-      <p>
-        The synopsis the tool generates is a <strong>first draft, not a final submission</strong>. Your project guide may ask you to narrow the scope, change the methodology, or focus on a different variable. That is normal — and it is exactly what guides are for. Treat the output as a strong starting point for that conversation, not as a document to submit unchanged. The thinking the tool cannot do for you includes: visiting your field site, talking to your respondents, reading the actual literature, and arguing for your own research choices in front of your guide. That part is still yours.
-      </p>
-    </div>
-
-    <h2>Frequently Asked Questions</h2>
-
-    <h3>Can I use a title suggested by my supervisor that is not on the list?</h3>
-    <p>
-      Yes. Use the "Enter my own title" option. The tool will work with any title as long as it has enough specificity to build a study around. If the title is too vague, you will be asked one question to sharpen it before the tool proceeds.
-    </p>
-
-    <h3>What if the tool picks the wrong specialisation domain for my title?</h3>
-    <p>
-      You can correct it. If you are a Marketing student studying a topic with financial dimensions — say, pricing strategy for EVs — the tool will ask you which lens to lead with. Interdisciplinary topics are supported; you just guide the primary framing.
-    </p>
-
-    <h3>Is the generated synopsis plagiarism-free?</h3>
-    <p>
-      The synopsis is entirely original text generated from your specific inputs. However, you should run it through your institute's anti-plagiarism tool before final submission, as required under RTM Nagpur University's 80% originality threshold for project reports. A synopsis that is built around your chosen title and your sector will naturally score well.
-    </p>
-
-    <h3>Can two students produce the same synopsis?</h3>
-    <p>
-      Not if they have different titles, different target populations, or different primary variables — which is why the title bank is designed with no two identical combinations. If two students somehow select the same title, they will be prompted to differentiate by sector, geography within Nagpur, or a specific sub-group of respondents.
-    </p>
-
-    <h3>Does the tool write my full project report?</h3>
-    <p>
-      No. The tool generates your synopsis — the research proposal you submit before fieldwork begins. Your full project report, which you write after collecting and analysing your data, is a separate and much longer document. The synopsis is the map; the project report is the journey.
-    </p>
-
-  </article>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <div class="sidebar-card">
-      <h4>Specialisations covered</h4>
-      <div class="spec-grid">
-        <div class="spec-pill">Marketing</div>
-        <div class="spec-pill">Finance</div>
-        <div class="spec-pill">HRM</div>
-        <div class="spec-pill">Operations</div>
-        <div class="spec-pill">Entrepreneurship</div>
-        <div class="spec-pill">Int'l Business</div>
-      </div>
-    </div>
-
-    <div class="sidebar-card">
-      <h4>What you need before starting</h4>
-      <ul>
-        <li>Your MBA specialisation confirmed</li>
-        <li>A rough idea of the sector or topic (even just "retail" or "banking" is enough)</li>
-        <li>10 minutes of uninterrupted time</li>
-        <li>Your supervisor's email — to share the draft immediately</li>
-      </ul>
-    </div>
-
-    <div class="sidebar-card">
-      <h4>Viksit Bharat 2047 pillars</h4>
-      <ul>
-        <li>Economy & Infrastructure</li>
-        <li>Governance & Technology</li>
-        <li>Youth & Skilled Workforce</li>
-        <li>Social Development & Inclusion</li>
-      </ul>
-    </div>
-
-    <div class="sidebar-card">
-      <h4>Nagpur sectors in the title bank</h4>
-      <ul>
-        <li>MIHAN / Aerospace SEZ</li>
-        <li>Vidarbha Agriculture & Agri-processing</li>
-        <li>Coal & Energy (WCL, NTPC)</li>
-        <li>Healthcare (AIIMS, Wockhardt)</li>
-        <li>Retail (Sitabuldi, Laxmi Nagar)</li>
-        <li>Logistics & Zero-Mile City</li>
-        <li>IT / ITeS & Startups</li>
-        <li>Textiles & Handlooms</li>
-      </ul>
-    </div>
-
-    <div class="sidebar-card">
-      <h4>RTM Nagpur project format</h4>
-      <p>The synopsis output follows the Semester IV Project Work guidelines under Course Code 4P5 — including the synopsis rubric criteria for problem domain, literature quality, methodology, and conclusions.</p>
-    </div>
-
-  </aside>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <p>Prepared for <strong>MBA Students — RTM Nagpur University</strong> · AI-Assisted Academic Tools Initiative · 2024–25</p>
-  <p style="margin-top:6px">This tool augments academic learning. All final submissions remain the intellectual work and responsibility of the student.</p>
-</footer>
-
+render();
+</script>
 </body>
 </html>
