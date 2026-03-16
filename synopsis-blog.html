@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Project Synopsis in 15 Minutes — A Guide for MBA Students at RTM Nagpur University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --saffron: #E8732A;
+    --saffron-light: #FDF0E8;
+    --saffron-mid: #F5C49A;
+    --navy: #0F1F3D;
+    --navy-mid: #1E3A5F;
+    --navy-light: #EBF0F8;
+    --ink: #1A1A1A;
+    --ink-mid: #3D3D3D;
+    --ink-light: #6B6B6B;
+    --cream: #FDFAF6;
+    --rule: #E2D9CE;
+    --green: #1E6B45;
+    --green-light: #E8F5EE;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--navy);
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--saffron);
+  }
+  .masthead span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .masthead .tag {
+    display: inline-block;
+    background: var(--saffron);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 2px;
+    margin-right: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 72px 32px 48px;
+    position: relative;
+  }
+
+  .hero-kicker {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-kicker::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--saffron);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--saffron);
+  }
+
+  .hero-deck {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    max-width: 680px;
+    border-left: 3px solid var(--saffron);
+    padding-left: 20px;
+    margin-bottom: 36px;
+  }
+
+  .byline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--ink-light);
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .byline strong { color: var(--ink-mid); font-weight: 500; }
+
+  /* ── LAYOUT ── */
+  .content-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  @media (max-width: 720px) {
+    .content-wrap { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+
+  /* ── ARTICLE BODY ── */
+  article p {
+    margin-bottom: 1.4em;
+    color: var(--ink-mid);
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  article p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  article p em { font-style: italic; color: var(--ink); }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 52px 0 16px;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin: 36px 0 10px;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.4;
+    border-top: 2px solid var(--navy);
+    border-bottom: 2px solid var(--navy);
+    padding: 24px 0;
+    margin: 40px 0;
+  }
+
+  /* ── STEP CARDS ── */
+  .steps { margin: 32px 0; display: flex; flex-direction: column; gap: 0; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0;
+    position: relative;
+  }
+
+  .step:not(:last-child) .step-line {
+    position: absolute;
+    left: 27px;
+    top: 56px;
+    bottom: 0;
+    width: 2px;
+    background: var(--rule);
+  }
+
+  .step-num {
+    width: 56px;
+    padding-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .step-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step-body {
+    padding: 0 0 36px 16px;
+  }
+
+  .step-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .step-desc {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .step-tag {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--navy-light);
+    color: var(--navy-mid);
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+  }
+
+  /* ── WHAT YOU GET BOX ── */
+  .output-box {
+    background: var(--navy);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin: 36px 0;
+    color: white;
+  }
+
+  .output-box h3 {
+    color: var(--saffron-mid);
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .output-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .output-list li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .output-list li::before {
+    content: '→';
+    color: var(--saffron);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── VIKSIT BHARAT CALLOUT ── */
+  .vb-callout {
+    border: 1.5px solid var(--green);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 36px 0;
+    background: var(--green-light);
+  }
+
+  .vb-callout .vb-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+
+  .vb-callout p {
+    font-size: 0.95rem !important;
+    color: #1A3D2B !important;
+    margin-bottom: 0 !important;
+    font-weight: 400 !important;
+  }
+
+  /* ── HONEST CAVEAT BOX ── */
+  .caveat {
+    background: var(--saffron-light);
+    border-left: 4px solid var(--saffron);
+    padding: 20px 24px;
+    margin: 36px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .caveat p {
+    font-size: 0.93rem !important;
+    color: #5C2D00 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar { padding-top: 52px; }
+
+  .sidebar-card {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 22px;
+    margin-bottom: 24px;
+  }
+
+  .sidebar-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 12px;
+  }
+
+  .sidebar-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-weight: 300;
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .sidebar-card ul li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .sidebar-card ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--saffron);
+    font-weight: 700;
+  }
+
+  .spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .spec-pill {
+    background: var(--navy-light);
+    color: var(--navy-mid);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 8px;
+    border-radius: 3px;
+    text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 28px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    border-top: 3px solid var(--saffron);
+  }
+
+  footer strong { color: rgba(255,255,255,0.7); }
+
+  /* ── INLINE SAMPLE ── */
+  .sample-title {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 16px 0 24px;
+  }
+  .sample-title .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 6px;
+  }
+  .sample-title .original { color: var(--ink-light); font-style: italic; font-size: 0.92rem; margin-bottom: 10px; }
+  .sample-title .refined {
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    padding-left: 14px;
+    border-left: 3px solid var(--saffron);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero { animation: fadeUp 0.6s ease both; }
+  .hero-deck { animation: fadeUp 0.6s 0.1s ease both; }
+
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <span><span class="tag">Student Resource</span> MBA Programme · RTM Nagpur University · Academic Year 2024–25</span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-kicker">AI-Assisted Research Tools</div>
+  <h1>Your Project Synopsis,<br><em>Done Right</em> — in 15 Minutes</h1>
+  <p class="hero-deck">
+    A step-by-step guide for MBA students at RTM Nagpur University on using the AI Synopsis Generator — from picking a title to producing a complete, supervisor-ready research proposal aligned with Viksit Bharat 2047.
+  </p>
+  <div class="byline">
+    <span><strong>For:</strong> MBA Sem IV Students — All Specialisations</span>
+    <span><strong>Time to read:</strong> 6 minutes</span>
+    <span><strong>Time to use the tool:</strong> 10–15 minutes</span>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="content-wrap">
+
+  <article>
+
+    <p>
+      Every MBA student at some point faces the same wall. Semester IV begins, the project guide asks for a synopsis, and suddenly a two-page document feels like the hardest thing you have ever been asked to write. Not because the ideas are missing — you have plenty — but because the <em>structure</em> feels opaque. What exactly goes into a problem statement? How many hypotheses are too many? What does "research design" mean when you have not actually collected any data yet?
+    </p>
+
+    <p>
+      This tool was built specifically for RTM Nagpur University MBA students to answer those questions — not with a textbook explanation, but by <strong>walking you through the process live</strong>, asking you the right questions, and generating a properly structured synopsis that your supervisor can actually work with.
+    </p>
+
+    <p>
+      Here is exactly how it works.
+    </p>
+
+    <div class="pull-quote">
+      "A good synopsis is not a summary of what you will find. It is a precise statement of what you intend to investigate and exactly how."
+    </div>
+
+    <h2>Before You Begin — One Thing to Understand</h2>
+
+    <p>
+      The tool is not a shortcut around thinking. It is a <strong>scaffold for your thinking</strong>. The moment you engage with it, you will be asked real questions — about your target population, about what you already know from reading, about which variables interest you most. Your answers shape every word of the synopsis. Two students with different answers get two completely different documents. The tool cannot do your thinking for you, and it does not try to.
+    </p>
+
+    <p>
+      What it eliminates is the formatting paralysis — the blank-page anxiety that comes from not knowing how to begin, and the hours lost wondering whether the hypothesis should come before or after the objectives.
+    </p>
+
+    <h2>The Five Stages</h2>
+
+    <div class="steps">
+
+      <!-- STEP 1 -->
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-num"><div class="step-circle">1</div></div>
+        <div class="step-body">
+          <div class="step-tag">Choose your domain</div>
+          <div class="step-title">Select your specialisation</div>
+          <p class="step-desc">
+            The first screen asks you to pick your MBA specialisation — Marketing, Finance, HRM, or Operations Management. This matters because the tool surfaces a curated list of <strong>pre-approved project titles</strong> relevant to your domain, all anchored in Nagpur's economic and social context. Titles are drawn from real sectors — MIHAN, WCL, Vidarbha's orange belt, Nagpur's retail corridor, AIIMS Nagpur, the city's IT/ITeS SEZ, and more. These are not generic textbook topics.
+          </p>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-num"><div class="step-circle">2</div></div>
+        <div class="step-body">
+          <div class="step-tag">Title selection</div>
+          <div class="step-title">Pick a title — or bring your own</div>
+          <p class="step-desc">
+            Browse the curated list for your specialisation. Every title is distinct — no two titles share both the same variable and the same target population. If your supervisor has already suggested a topic, use the <em>"Enter my own title"</em> option. The tool will check it for specificity — does it name a sector, a dependent variable, a geography? — and ask one clarifying question if needed before proceeding.
+          </p>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-num"><div class="step-circle">3</div></div>
+        <div class="step-body">
+          <div class="step-tag">Title refinement</div>
+          <div class="step-title">See two improved versions — then decide</div>
+          <p class="step-desc">
+            This is the part most students find most useful. The tool presents two refined alternatives to whichever title you selected, explains briefly what changed and why, and lets you choose between the three options. Here is an example of how that looks:
+          </p>
+
+          <div class="sample-title">
+            <div class="label">Your original title</div>
+            <div class="original">"A study of social media marketing in Nagpur"</div>
+            <div class="label" style="margin-top:12px">Option A — Sharper focus</div>
+            <div class="refined">"Influence of Instagram Marketing on Brand Recall among Young Consumers in Nagpur's FMCG Sector"</div>
+            <div class="label" style="margin-top:10px">Option B — Policy-linked scope</div>
+            <div class="refined">"Social Media Marketing Adoption by MSMEs in Nagpur: A Study in the Context of Digital India and Viksit Bharat 2047"</div>
+          </div>
+
+          <p class="step-desc">
+            Option A narrows and sharpens — better for a clean, testable study. Option B widens scope but adds contemporary relevance — stronger for students aiming at publication or competitions. You can proceed with either alternative, or keep your original title exactly as it is.
+          </p>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-num"><div class="step-circle">4</div></div>
+        <div class="step-body">
+          <div class="step-tag">Synopsis generation</div>
+          <div class="step-title">The full document is built around your confirmed title</div>
+          <p class="step-desc">
+            Once your title is confirmed, the tool generates your complete synopsis as running text — ready to read, copy, and share with your guide. No downloading required, no formatting to fix. The document follows the RTM Nagpur University project format precisely, covering every section your guide expects to see.
+          </p>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="step">
+        <div class="step-num"><div class="step-circle">5</div></div>
+        <div class="step-body">
+          <div class="step-tag">Policy alignment</div>
+          <div class="step-title">The Viksit Bharat 2047 paragraph — added automatically</div>
+          <p class="step-desc">
+            Every synopsis closes with a dedicated paragraph connecting your study to the Government of India's Viksit Bharat 2047 vision. This is not a generic paragraph that could belong to any study — it identifies which specific pillar of the vision your research speaks to (Youth & Education, Economy & Infrastructure, Governance & Technology, or Social Development), names one or two supporting schemes where relevant, and ends with a sentence on what your findings could mean specifically for a Tier-2 city like Nagpur.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>What Your Completed Synopsis Contains</h2>
+
+    <div class="output-box">
+      <h3>Every section, in order</h3>
+      <ul class="output-list">
+        <li>Title — confirmed and refined, with your name and programme details</li>
+        <li>Introduction and background — contextualised for Nagpur and the relevant sector</li>
+        <li>Statement of the problem — the specific gap your study addresses</li>
+        <li>Significance of the study — academic, managerial, and policy dimensions</li>
+        <li>Research objectives — 4 to 5 specific, measurable objectives</li>
+        <li>Research hypotheses — null and alternate pairs, ready for statistical testing</li>
+        <li>Review of literature — key themes, foundational frameworks, and identified research gap</li>
+        <li>Research design — descriptive or exploratory, justified for your topic</li>
+        <li>Sampling plan — population, technique, and sample size with rationale</li>
+        <li>Data collection tools — questionnaire design rationale and secondary sources</li>
+        <li>Statistical tools — regression, chi-square, factor analysis, or ANOVA as relevant</li>
+        <li>Expected outcomes and limitations</li>
+        <li>Preliminary bibliography — 8 to 10 seed references to start your literature review</li>
+        <li>Viksit Bharat 2047 alignment — the policy connection paragraph</li>
+      </ul>
+    </div>
+
+    <h2>The Viksit Bharat 2047 Connection</h2>
+
+    <p>
+      India's overarching development vision — a fully developed nation by the centenary of Independence in 2047 — rests on four pillars: a thriving economy and modern infrastructure, an equitable and inclusive society, robust governance and technology adoption, and a prosperous, skilled youth. Almost every serious management research topic maps onto one or more of these pillars.
+    </p>
+
+    <div class="vb-callout">
+      <div class="vb-label">Why this paragraph matters</div>
+      <p>
+        Examiners and research panels increasingly look for studies that connect local findings to larger national priorities. A synopsis that articulates this connection — specifically, not vaguely — signals that the student understands both the academic and the real-world significance of their work. It also makes your project more competitive if you plan to present it at conferences or submit it for publication.
+      </p>
+    </div>
+
+    <p>
+      A finance student studying microfinance access for women in Nagpur's peri-urban areas connects to the Social Development pillar. An HRM student studying attrition in Nagpur's IT/ITeS sector connects to the Youth & Skilled Workforce pillar. A marketing student studying EV adoption connects to both Economy and Governance pillars. The tool identifies this connection from your title — you do not need to work it out yourself.
+    </p>
+
+    <h3>An honest word about what the tool does not do</h3>
+
+    <div class="caveat">
+      <p>
+        The synopsis the tool generates is a <strong>first draft, not a final submission</strong>. Your project guide may ask you to narrow the scope, change the methodology, or focus on a different variable. That is normal — and it is exactly what guides are for. Treat the output as a strong starting point for that conversation, not as a document to submit unchanged. The thinking the tool cannot do for you includes: visiting your field site, talking to your respondents, reading the actual literature, and arguing for your own research choices in front of your guide. That part is still yours.
+      </p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Can I use a title suggested by my supervisor that is not on the list?</h3>
+    <p>
+      Yes. Use the "Enter my own title" option. The tool will work with any title as long as it has enough specificity to build a study around. If the title is too vague, you will be asked one question to sharpen it before the tool proceeds.
+    </p>
+
+    <h3>What if the tool picks the wrong specialisation domain for my title?</h3>
+    <p>
+      You can correct it. If you are a Marketing student studying a topic with financial dimensions — say, pricing strategy for EVs — the tool will ask you which lens to lead with. Interdisciplinary topics are supported; you just guide the primary framing.
+    </p>
+
+    <h3>Is the generated synopsis plagiarism-free?</h3>
+    <p>
+      The synopsis is entirely original text generated from your specific inputs. However, you should run it through your institute's anti-plagiarism tool before final submission, as required under RTM Nagpur University's 80% originality threshold for project reports. A synopsis that is built around your chosen title and your sector will naturally score well.
+    </p>
+
+    <h3>Can two students produce the same synopsis?</h3>
+    <p>
+      Not if they have different titles, different target populations, or different primary variables — which is why the title bank is designed with no two identical combinations. If two students somehow select the same title, they will be prompted to differentiate by sector, geography within Nagpur, or a specific sub-group of respondents.
+    </p>
+
+    <h3>Does the tool write my full project report?</h3>
+    <p>
+      No. The tool generates your synopsis — the research proposal you submit before fieldwork begins. Your full project report, which you write after collecting and analysing your data, is a separate and much longer document. The synopsis is the map; the project report is the journey.
+    </p>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <h4>Specialisations covered</h4>
+      <div class="spec-grid">
+        <div class="spec-pill">Marketing</div>
+        <div class="spec-pill">Finance</div>
+        <div class="spec-pill">HRM</div>
+        <div class="spec-pill">Operations</div>
+        <div class="spec-pill">Entrepreneurship</div>
+        <div class="spec-pill">Int'l Business</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>What you need before starting</h4>
+      <ul>
+        <li>Your MBA specialisation confirmed</li>
+        <li>A rough idea of the sector or topic (even just "retail" or "banking" is enough)</li>
+        <li>10 minutes of uninterrupted time</li>
+        <li>Your supervisor's email — to share the draft immediately</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Viksit Bharat 2047 pillars</h4>
+      <ul>
+        <li>Economy & Infrastructure</li>
+        <li>Governance & Technology</li>
+        <li>Youth & Skilled Workforce</li>
+        <li>Social Development & Inclusion</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Nagpur sectors in the title bank</h4>
+      <ul>
+        <li>MIHAN / Aerospace SEZ</li>
+        <li>Vidarbha Agriculture & Agri-processing</li>
+        <li>Coal & Energy (WCL, NTPC)</li>
+        <li>Healthcare (AIIMS, Wockhardt)</li>
+        <li>Retail (Sitabuldi, Laxmi Nagar)</li>
+        <li>Logistics & Zero-Mile City</li>
+        <li>IT / ITeS & Startups</li>
+        <li>Textiles & Handlooms</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>RTM Nagpur project format</h4>
+      <p>The synopsis output follows the Semester IV Project Work guidelines under Course Code 4P5 — including the synopsis rubric criteria for problem domain, literature quality, methodology, and conclusions.</p>
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Prepared for <strong>MBA Students — RTM Nagpur University</strong> · AI-Assisted Academic Tools Initiative · 2024–25</p>
+  <p style="margin-top:6px">This tool augments academic learning. All final submissions remain the intellectual work and responsibility of the student.</p>
+</footer>
+
+</body>
+</html>
